@@ -1,6 +1,6 @@
-# API RESTFUL para um sistema bancario.
+# API RESTful para um sistema bancário
 
-O papel desta API para um banco é a criação de contas bancarias, listagem de todas as contas armazenadas, pode atualizar os dados do cliente, excluir caso necessario a conta, depositar, sacar, tranferir valores entre contas do banco, consultar o saldo e emitir todo o extrato referente a conta.
+O papel desta API em um banco é criar contas bancárias, listar todas as contas armazenadas, atualizar os dados do cliente, excluir contas quando necessário, permitir depósitos, saques, transferências entre contas do banco, consultar saldo e emitir extratos referentes às contas.
 
 ## Endpoints
 
@@ -8,10 +8,9 @@ O papel desta API para um banco é a criação de contas bancarias, listagem de 
 
 #### `GET` `http://localhost:3000/contas?senha_banco=Cubos123Bank`
 
-Esse endpoint ira listar todas as contas bancárias existentes. Para ter a listagem é necessario passar a senha "Cubos123Bank" na query senha_banco.
+Este endpoint lista todas as contas bancárias existentes. Para obter a lista, é necessário incluir a senha "Cubos123Bank" nos parâmetros de consulta.
 
-- **Requisição** - query params (respeitando este nome)
-
+- **Requisição** - parâmetros de consulta (respeitando estes nomes):
   - senha_banco
 
 - **Resposta**
@@ -23,7 +22,7 @@ Esse endpoint ira listar todas as contas bancárias existentes. Para ter a lista
 
 #### `POST` `http://localhost:3000/contas`
 
-Esse endpoint ira criar uma conta bancária, onde será gerado um número único para identificação da conta (número da conta).
+Este endpoint cria uma conta bancária, gerando um número único para identificação da conta.
 
 - **Requisição** - O corpo (body) ira possuir um objeto com as seguintes propriedades (respeitando estes nomes):
 
@@ -36,8 +35,8 @@ Esse endpoint ira criar uma conta bancária, onde será gerado um número único
 
 - **Resposta**
 
-  Em caso de **sucesso**, não ira enviar conteúdo no corpo (body) da resposta.  
-  Em caso de **falha na validação**, a resposta ira possuir **_status code_** apropriado, e em seu corpo (body) ira possuir um objeto com uma propriedade **mensagem** que ira possuir como valor um texto explicando o motivo da falha.
+  Em caso de **sucesso**, não haverá conteúdo no corpo (body) da resposta. 
+  Em caso de **falha na validação**, a resposta terá o status code apropriado e um objeto no corpo (body) com uma propriedade mensagem explicando o motivo da falha.
 
   <img src ="./imagens/criarConta.png">
 
@@ -58,8 +57,8 @@ Esse endpoint ira atualizar apenas os dados do usuário de uma conta bancária.
 
 - **Resposta**
 
-  Em caso de **sucesso**, não ira enviar conteúdo no corpo (body) da resposta.  
-  Em caso de **falha na validação**, a resposta ira possuir **_status code_** apropriado, e em seu corpo (body) ira possuir um objeto com uma propriedade **mensagem** que ira possuir como valor um texto explicando o motivo da falha.
+  Em caso de **sucesso**, não haverá conteúdo no corpo (body) da resposta.
+  Em caso de **falha na validação**, a resposta terá o status code apropriado e um objeto no corpo (body) com uma propriedade mensagem explicando o motivo da falha.
 
  <img src ="./imagens/atualizarConta.png">
 
@@ -75,8 +74,8 @@ Esse endpoint ira excluir uma conta bancária existente.
 
 - **Resposta**
 
-  Em caso de **sucesso**, não ira enviar conteúdo no corpo (body) da resposta.  
-  Em caso de **falha na validação**, a resposta ira possuir **_status code_** apropriado, e em seu corpo (body) ira possuir um objeto com uma propriedade **mensagem** que ira possuir como valor um texto explicando o motivo da falha.
+  Em caso de **sucesso**, não haverá conteúdo no corpo (body) da resposta.
+  Em caso de **falha na validação**, a resposta terá o status code apropriado e um objeto no corpo (body) com uma propriedade mensagem explicando o motivo da falha.
 
 <img src ="./imagens/excluirConta.png">
 
@@ -84,23 +83,23 @@ Esse endpoint ira excluir uma conta bancária existente.
 
 #### `POST` `http://localhost:3000/transacoes/depositar`
 
-Esse endpoint ira somar o valor do depósito ao saldo de uma conta válida e registrar essa transação.
+Este endpoint soma o valor do depósito ao saldo de uma conta válida e registra essa transação.
 
-- **Requisição** - O corpo (body) ira possuir um objeto com as seguintes propriedades (respeitando estes nomes):
+- **Requisição** - O corpo (body) deve conter um objeto com as seguintes propriedades (respeitando estes nomes):
 
   - numero_conta
   - valor
 
 - **Resposta**
 
-  Em caso de **sucesso**, não ira enviar conteúdo no corpo (body) da resposta.  
-  Em caso de **falha na validação**, a resposta ira possuir **_status code_** apropriado, e em seu corpo (body) ira possuir um objeto com uma propriedade **mensagem** que ira possuir como valor um texto explicando o motivo da falha.
+  Em caso de **sucesso**, não haverá conteúdo no corpo (body) da resposta.
+  Em caso de **falha na validação**, a resposta terá o status code apropriado e um objeto no corpo (body) com uma propriedade mensagem explicando o motivo da falha.
 
 <img src ="./imagens/deposito.png">
 
 ### Sacar
 
-Esse endpoint ira realizar o saque de um valor em uma determinada conta bancária e registrar essa transação.
+Este endpoint realiza o saque de um valor em uma determinada conta bancária e registra essa transação.
 
 #### `POST` `http://localhost:3000/transacoes/sacar`
 
@@ -112,8 +111,8 @@ Esse endpoint ira realizar o saque de um valor em uma determinada conta bancári
 
 - **Resposta**
 
-  Em caso de **sucesso**, não ira enviar conteúdo no corpo (body) da resposta.  
-  Em caso de **falha na validação**, a resposta ira possuir **_status code_** apropriado, e em seu corpo (body) ira possuir um objeto com uma propriedade **mensagem** que ira possuir como valor um texto explicando o motivo da falha.
+  Em caso de **sucesso**, não haverá conteúdo no corpo (body) da resposta.
+  Em caso de **falha na validação**, a resposta terá o status code apropriado e um objeto no corpo (body) com uma propriedade mensagem explicando o motivo da falha.
 
 <img src ="./imagens/saque.png">
 
@@ -121,7 +120,7 @@ Esse endpoint ira realizar o saque de um valor em uma determinada conta bancári
 
 #### `POST` `http://localhost:3000/transacoes/transferir`
 
-Esse endpoint ira permitir a transferência de recursos (dinheiro) de uma conta bancária para outra e registrar essa transação.
+Este endpoint permite a transferência de recursos (dinheiro) de uma conta bancária para outra e registra essa transação.
 
 - **Requisição** - O corpo (body) ira possuir um objeto com as seguintes propriedades (respeitando estes nomes):
 
@@ -132,8 +131,8 @@ Esse endpoint ira permitir a transferência de recursos (dinheiro) de uma conta 
 
 - **Resposta**
 
-  Em caso de **sucesso**, não ira enviar conteúdo no corpo (body) da resposta.  
-  Em caso de **falha na validação**, a resposta ira possuir **_status code_** apropriado, e em seu corpo (body) ira possuir um objeto com uma propriedade **mensagem** que ira possuir como valor um texto explicando o motivo da falha.
+  Em caso de **sucesso**, não haverá conteúdo no corpo (body) da resposta.
+  Em caso de **falha na validação**, a resposta terá o status code apropriado e um objeto no corpo (body) com uma propriedade mensagem explicando o motivo da falha.
 
 <img src =".http://localhost:3000/imagens/transferencia.png">
 
@@ -141,9 +140,9 @@ Esse endpoint ira permitir a transferência de recursos (dinheiro) de uma conta 
 
 #### `GET` `/contas/saldo?numero_conta=123&senha=123`
 
-Esse endpoint ira retornar o saldo de uma conta bancária.
+Este endpoint retorna o saldo de uma conta bancária.
 
-- **Requisição** - query params
+- **Requisição** -  parâmetros de consulta:
 
   - numero_conta
   - senha
@@ -158,9 +157,9 @@ Esse endpoint ira retornar o saldo de uma conta bancária.
 
 #### `GET` `http://localhost:3000/contas/extrato?numero_conta=123&senha=123`
 
-Esse endpoint ira listar as transações realizadas de uma conta específica.
+Este endpoint lista as transações realizadas em uma conta específica.
 
-- **Requisição** - query params
+- **Requisição** -  parâmetros de consulta:
 
   - numero_conta
   - senha
