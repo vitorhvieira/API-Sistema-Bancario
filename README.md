@@ -134,7 +134,7 @@ Este endpoint permite a transferência de recursos (dinheiro) de uma conta banc�
   Em caso de **sucesso**, não haverá conteúdo no corpo (body) da resposta.
   Em caso de **falha na validação**, a resposta terá o status code apropriado e um objeto no corpo (body) com uma propriedade mensagem explicando o motivo da falha.
 
-<img src =".http://localhost:3000/imagens/transferencia.png">
+<img src ="./imagens/transferencia.png">
 
 ### Saldo
 
