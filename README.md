@@ -11,6 +11,7 @@ O papel desta API em um banco é criar contas bancárias, listar todas as contas
 Este endpoint lista todas as contas bancárias existentes. Para obter a lista, é necessário incluir a senha "Cubos123Bank" nos parâmetros de consulta.
 
 - **Requisição** - parâmetros de consulta (respeitando estes nomes):
+
   - senha_banco
 
 - **Resposta**
@@ -35,7 +36,7 @@ Este endpoint cria uma conta bancária, gerando um número único para identific
 
 - **Resposta**
 
-  Em caso de **sucesso**, não haverá conteúdo no corpo (body) da resposta. 
+  Em caso de **sucesso**, não haverá conteúdo no corpo (body) da resposta.
   Em caso de **falha na validação**, a resposta terá o status code apropriado e um objeto no corpo (body) com uma propriedade mensagem explicando o motivo da falha.
 
   <img src ="./imagens/criarConta.png">
@@ -142,7 +143,7 @@ Este endpoint permite a transferência de recursos (dinheiro) de uma conta banc�
 
 Este endpoint retorna o saldo de uma conta bancária.
 
-- **Requisição** -  parâmetros de consulta:
+- **Requisição** - parâmetros de consulta:
 
   - numero_conta
   - senha
@@ -159,7 +160,7 @@ Este endpoint retorna o saldo de uma conta bancária.
 
 Este endpoint lista as transações realizadas em uma conta específica.
 
-- **Requisição** -  parâmetros de consulta:
+- **Requisição** - parâmetros de consulta:
 
   - numero_conta
   - senha
